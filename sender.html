@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sender | Crypta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">⌘ crypta<span>.</span></a>
+        <span class="secure-tag">SENDER</span>
+    </nav>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <p class="eyebrow">PRIVATE MESSAGE</p>
+        <h1>Send a secret.</h1>
+        <p class="intro">Enter your code and the text you want to encrypt.</p>
+
+        <form id="senderForm">
+            <div class="field">
+                <label for="senderCode">Secret code</label>
+                <input
+                    id="senderCode"
+                    type="password"
+                    minlength="8"
+                    maxlength="256"
+                    placeholder="Enter at least 8 characters"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <div class="field">
+                <label for="message">Your text message</label>
+                <textarea
+                    id="message"
+                    maxlength="10000"
+                    placeholder="Type your private message..."
+                    required
+                ></textarea>
+            </div>
+
+            <button class="primary" id="encryptBtn" type="submit">
+                Encrypt Message
+            </button>
+        </form>
+
+        <p id="senderStatus" class="status" role="status"></p>
+
+        <section id="encryptedResult" class="result" hidden>
+            <h2>Encrypted Text</h2>
+
+            <textarea
+                id="encryptedOutput"
+                class="output"
+                readonly
+                aria-label="Encrypted text"
+                spellcheck="false"
+            ></textarea>
+
+            <button class="secondary" id="copyBtn" type="button">
+                Copy Encrypted Text
+            </button>
+
+            <p class="note">
+                Send the encrypted text to the receiver.
+                Share your secret code through a separate trusted channel.
+            </p>
+        </section>
+    </main>
+
+    <footer>CRYPTA © 2026</footer>
+
+</body>
+</html>

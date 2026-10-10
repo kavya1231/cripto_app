@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receiver | Crypta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">⌘ crypta<span>.</span></a>
+        <span class="secure-tag">RECEIVER</span>
+    </nav>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <p class="eyebrow">UNLOCK MESSAGE</p>
+        <h1>Reveal the secret.</h1>
+        <p class="intro">
+            Enter the sender's secret code and paste the encrypted text.
+        </p>
+
+        <form id="receiverForm">
+            <div class="field">
+                <label for="receiverCode">Secret code</label>
+                <input
+                    id="receiverCode"
+                    type="password"
+                    minlength="8"
+                    maxlength="256"
+                    placeholder="Enter the sender's code"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <div class="field">
+                <label for="encryptedMessage">Encrypted text</label>
+                <textarea
+                    id="encryptedMessage"
+                    maxlength="100000"
+                    placeholder="Paste the complete encrypted text..."
+                    required
+                ></textarea>
+            </div>
+
+            <button class="primary" id="decryptBtn" type="submit">
+                Decrypt Message
+            </button>
+        </form>
+
+        <p id="receiverStatus" class="status" role="status"></p>
+
+        <section id="decryptedResult" class="result" hidden>
+            <h2>Original Text</h2>
+
+            <textarea
+                id="decryptedOutput"
+                class="output"
+                readonly
+                aria-label="Original message"
+            ></textarea>
+
+            <button class="secondary" id="copyPlainBtn" type="button">
+                Copy Original Text
+            </button>
+        </section>
+    </main>
+
+    <footer>CRYPTA © 2026</footer>
+
+</body>
+</html>
